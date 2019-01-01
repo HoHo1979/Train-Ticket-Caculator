@@ -23,6 +23,7 @@ public class Ticket {
         System.out.println("Total tickets: "+tickets);
         System.out.println("Round-trip: "+roundTripTicket);
         System.out.println("Total: "+ getTotalPrice());
+        System.out.println();
     }
 
 }

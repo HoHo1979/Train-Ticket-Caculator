@@ -6,15 +6,28 @@ fun main(args: Array<String>) {
 
     var scanner = Scanner(System.`in`)
 
-    print("Please enter number of tickets:")
-    var ticket = scanner.nextInt()
-    print("How many round-trip tickets:")
-    var roundTripTick = scanner.nextInt()
+    var exitCode=0
 
-    var tickets = KotlinTicket(ticket,roundTripTick)
+    while(exitCode!=-1) {
 
-    tickets.printStatements()
+        print("Please enter number of tickets:")
+        var ticket = scanner.nextInt()
 
+        if (ticket==-1) {
+            break
+        }
+
+        print("How many round-trip tickets:")
+        var roundTripTick = scanner.nextInt()
+
+        if(roundTripTick==-1){
+            break;
+        }
+
+        var tickets = KotlinTicket(ticket, roundTripTick)
+        tickets.printStatements()
+
+    }
 }
 
 
@@ -34,7 +47,7 @@ class KotlinTicket(var numTicket:Int,var numRoundTripTicket:Int){
         println("Total tickets: $numTicket")
         println("Round-trip: $numRoundTripTicket")
         println("Total: " + getTotalPrice())
-
+        println()
     }
 
 }
